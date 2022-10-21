@@ -44,19 +44,17 @@
     
     
     <script lang="ts">
-    export default {
-    data:() => ({
-        email: "",
-        password: "",
-    }),
 
-    methods: {
-        login(){
-            if(this.email && this.password)
-            this.$router.push({path: "/profile" });
+    export default ({
+      data() {
+        return {
+          email: '',
+          password: ''
         }
-    }
-};
+      }
+    });
+    
+    
     </script>
     
     
