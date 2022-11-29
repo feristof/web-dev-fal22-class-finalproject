@@ -10,22 +10,19 @@ console.log(newTime.toLocaleString());
   </main>
   <!-- <p id="royalty-text">This image is royalty free</p> -->
   <h1>Welcome to MY FITNESS APP</h1>
-  <h2>{{newTime}}</h2>
-  
+  <h2>{{ newTime }}</h2>
 
-  <h1>Try new workout: to do </h1>
+  <h1>Try new workout: to do</h1>
 </template>
 
-
 <style scoped>
-
-h1{
+h1 {
   text-align: center;
   margin-top: 80px;
   font-size: 38px;
   font-weight: 400;
 }
-h2{
+h2 {
   text-align: center;
   font-size: 12px;
   font-weight: 400;
