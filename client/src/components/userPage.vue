@@ -20,14 +20,18 @@ import { RouterLink } from "vue-router";
                <!-- <div class="button is-success is-outlined"> <router-link to="/userPage">Welcome &nbsp<strong>{{ session.user.lastName }}, {{ session.user.firstName }} </strong></router-link></div> -->
 </label>
             <div class="control">
-            <!-- <input class="input" type="text" placeholder="First Name" v-model="session.user.firstName"> -->
+              <div> {{ session.user?.firstName }} </div>
+
             </div>
         </div>
     
         <div class="field">
             <label class="label">Last Name: </label>
             <div class="control">
-            <!-- <input class="input" type="text" placeholder="Last Name" v-model="session.user.lastName"> -->
+              <div class="control">
+              <div> {{ session.user?.lastName }} </div>
+
+            </div>
             </div>
         </div>
     
