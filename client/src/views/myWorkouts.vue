@@ -59,6 +59,10 @@
     margin-top: 1.5rem;
     text-align: center;
 }
+
+.title{
+  font-weight: 600;
+}
 </style>
 
 

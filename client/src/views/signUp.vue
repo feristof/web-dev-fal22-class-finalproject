@@ -34,7 +34,7 @@ let userEmail = "";
             <div class="field">
                  <label class="label">Handle</label>
                  <div class="control">
-                     <input class="input" type="text" required v-model="username" placeholder="eg. BrianL">
+                     <input class="input is-primary" type="text" required v-model="username" placeholder="eg. BrianL">
                  </div>
              </div>
              <label class="label">Email</label>

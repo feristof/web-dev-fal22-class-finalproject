@@ -6,7 +6,42 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-<div class="card is-2-tablet is-4-desktop is-4-widescreen">
+
+<div v-if="session.user == null">
+    <div class="card">
+  <div class="card-content">
+    <p class="subtitle">
+      It Seems you are not loggen in, please log in to see your workouts
+    </p>
+
+    <p class="title">
+     OR
+    </p>
+
+    <p class="subtitle">
+      Please Join our community and share your workouts with others
+    </p>
+    <p class="subtitle">
+      -My fitness app
+    </p>
+  </div>
+  <footer class="card-footer">
+    <p class="card-footer-item">
+      <span>
+        <RouterLink to="/signUp">Join Us</RouterLink>
+      </span>
+    </p>
+    <p class="card-footer-item">
+      <span>
+        <RouterLink to="/logIn">Log in</RouterLink>
+      </span>
+    </p>
+  </footer>
+    </div>
+</div>
+
+
+<div class="card is-2-tablet is-4-desktop is-4-widescreen" v-else>
   <header class="card-header">
     <p class="card-header-title is-centered">
       My Profile
@@ -17,12 +52,12 @@ import { RouterLink } from "vue-router";
 
         <div class="field">
             <label class="label">First Name:            
-               <!-- <div class="button is-success is-outlined"> <router-link to="/userPage">Welcome &nbsp<strong>{{ session.user.lastName }}, {{ session.user.firstName }} </strong></router-link></div> -->
-</label>
-            <div class="control">
-              <div> {{ session.user?.firstName }} </div>
-
-            </div>
+            </label>
+          <div class="control">
+              <div> 
+                {{ session.user?.firstName }} 
+              </div>
+          </div>
         </div>
     
         <div class="field">
@@ -30,18 +65,18 @@ import { RouterLink } from "vue-router";
             <div class="control">
               <div class="control">
               <div> {{ session.user?.lastName }} </div>
-
             </div>
             </div>
         </div>
     
         <div class="field">
-            <label class="label">Email: </label>
+            <label class="label">Email:            
+            </label>
             <div class="control">
-            <!-- <input class="input" type="text" placeholder="Email" v-model="session.user.email"> -->
+              <div> {{ session.user?.email }} </div>
+
             </div>
         </div>
-    
     </div>
   </div>
   <footer class="card-footer">
@@ -60,6 +95,18 @@ import { RouterLink } from "vue-router";
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+.subtitle, .title{
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.title{
+  font-weight: 600;
 }
 </style>
 

@@ -6,7 +6,6 @@ import { RouterLink } from "vue-router";
 <template>
  <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    
     <router-link to="./" class="navbar-item">
       <div class="logo"> <img src="../assets/logo.png"> </div>
     </router-link>
@@ -64,5 +63,8 @@ import { RouterLink } from "vue-router";
 </template>
 
 <style scoped>
-
+.logo img{
+  max-height:52px;
+  margin-left: 10px;
+}
 </style>

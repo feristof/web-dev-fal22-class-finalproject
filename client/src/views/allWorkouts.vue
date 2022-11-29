@@ -18,7 +18,7 @@
     </p>
 
     <p class="title">
-     OR
+        OR
     </p>
 
     <p class="subtitle">
@@ -40,8 +40,8 @@
       </span>
     </p>
   </footer>
+    </div>
 </div>
-     </div>
      <div class="column" v-else>
          <div class="button is-info is-fullwidth" @click="isActive=true">Add Workout</div>
          <div class="modal" :class="{ 'is-active': isActive }">
@@ -145,6 +145,9 @@ img:hover{
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
     text-align: center;
+}
+.title{
+  font-weight: 600;
 }
 .workout-image img{
     width: 100%;
