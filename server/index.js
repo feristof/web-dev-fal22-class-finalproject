@@ -1,9 +1,15 @@
 const express = require('express')
 const app = express()
 
-// fetch data
+
+// fetch data for workouts
 // const productsController = require('./controllers/products');
+const workoutsController = require('./controllers/workouts');
+
+
+// fetch data for cart
 // const cartController = require('./controllers/cart');
+
 
 const hostname = '127.0.0.1';
 const port = process.env.PORT || 3000;
@@ -22,14 +28,13 @@ app.use(express.json());
 
 app
 .get('/', (req, res) => {
-    res.status(200).send('Happy Sweet New Year');
+    res.status(200).send('Its working!');
 })
 .get('/error', (req, res) => {
     sss.PORT();
 })
 
-// .use('/api/v1/products', productsController)
-// .use('/api/v1/cart', cartController)
+.use('/api/v1/workouts', workoutsController)
 
 app.get('*', (req, res) => {
     

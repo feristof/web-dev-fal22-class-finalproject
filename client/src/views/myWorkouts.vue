@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import session, { login, logout } from "../stores/session";
 import { RouterLink } from "vue-router";
-import data, { deleteWorkout } from "../stores/workouts";
 let isActive = ref(false);
 let ttl = "";
 let date = "";

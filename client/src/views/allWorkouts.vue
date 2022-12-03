@@ -1,10 +1,12 @@
 <script setup lang="ts">
-     import { ref } from 'vue';
+     import { ref, reactive, computed } from 'vue';
      import session, { logout, login } from "../stores/session";
      import { RouterLink } from "vue-router";
-     import data, { deleteWorkout } from "../stores/workouts";
-     let isActive = ref(false);
+     import { getWorkouts, type Workout } from "../stores/workouts";
      let ttl = '';let date = '';let Location = '';let Url = '';let Time = '';let Type = '';
+    const workouts = reactive([] as Workout[]);
+    getWorkouts().then( x=> workouts.push(...x));
+    const isActive = ref(false);
 </script>
 
 
@@ -90,12 +92,12 @@
                      </div>
                  </section>
                  <footer class="modal-card-foot">
-                     <button class="button is-success" @click="data.workouts.push({firstName: session.user?.firstName, lastName: session.user?.lastName, handle: session.user?.handle, title: ttl as string, workoutDate: date as string, workoutTime: Time as string, workoutLocation: Location as string, pictureUrl: Url as string, workoutType: Type as string}); isActive=false; ttl = '';date = '';Location = '';Url = '';Time = '';Type = '';">Add Workout</button>
-                     <button class="button" @click="isActive=false">Cancel</button>
+                        <button class="button is-success" @click="isActive=false">Save changes</button>
+                        <button class="button" @click="isActive=false">Cancel</button>
                  </footer>
              </div>
          </div>
-         <div v-for="workout in data.workouts">
+         <div v-for="workout in workouts">
                  <br><br>
                  <div class="media">
                      <div class="media-content">
@@ -112,7 +114,7 @@
                          </div>
                      </div>
                      <div class="media-right">
-                        <button class="button is-danger is-outlined" @click="deleteWorkout(workout)">Delete</button>&nbsp
+                        <button class="button is-danger is-outlined" @click="">Delete</button>&nbsp
                         <button class="button is-black is-outlined">Share</button>
 
                      </div>
