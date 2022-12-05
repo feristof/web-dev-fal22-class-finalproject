@@ -24,10 +24,11 @@
   
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/jewpaltz/2022-fall-web-dev.git"
+      "url": "git+https://github.com/feristof/web-dev-fal22-class-finalproject.git"
+      
     },
     "bugs": {
-      "url": "https://github.com/jewpaltz/2022-fall-web-dev/issues"
+      "url": "https://github.com/feristof/web-dev-fal22-class-finalproject/issues"
     },
-    "homepage": "https://github.com/jewpaltz/2022-fall-web-dev#readme"
+    "homepage": "https://github.com/feristof/web-dev-fal22-class-finalproject#readme"
   }

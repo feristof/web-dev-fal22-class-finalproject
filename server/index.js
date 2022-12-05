@@ -7,10 +7,6 @@ const app = express()
 const workoutsController = require('./controllers/workouts');
 
 
-// fetch data for cart
-// const cartController = require('./controllers/cart');
-
-
 const hostname = '127.0.0.1';
 const port = process.env.PORT || 3000;
 
