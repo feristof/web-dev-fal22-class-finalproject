@@ -6,7 +6,7 @@ let fName = "";
 let lName = "";
 let username = "";
 let userEmail = "";
-let userPassword = "";
+let password = "";
 let county= "";
 
 </script>
@@ -79,7 +79,7 @@ let county= "";
                     class="input is-primary"
                     type="password"
                     required
-                    v-model="userPassword"
+                    v-model="password"
                     placeholder="eg. 123456"
                   />
                 </div>
@@ -119,6 +119,7 @@ let county= "";
                       lastName: lName,
                       handle: username,
                       email: userEmail,
+                      password: password,
                     })
                   "
                   >Sign Up</router-link

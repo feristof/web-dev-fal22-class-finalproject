@@ -3,22 +3,18 @@
      import session, { logout, login } from "../stores/session";
      import { RouterLink } from "vue-router";
      import { getWorkouts, type Workout, deleteWorkout, createWorkout } from "../stores/workouts";
-     let ttl = '';let date = '';let Location = '';let Url = '';let Time = '';let Type = '';
+     let ttl = '';let date = '';let Location = '';let Url = '';let Time = '';
     const workouts = reactive([] as Workout[]);
     getWorkouts().then( x=> workouts.push(...x));
     const isActive = ref(false);
 
     // const workout = reactive({ } as Workout);
-    // workout.id = 2;
-    // workout.firstName = 'test';
-    // workout.lastName = 'test';
-    // workout.handle = 'test';
-    
-    // workout.workoutLocation = 'test';
-    // workout.title = 'ttl';
-
+    //add workout to the database
     // function add(){
     //     workout.workoutDate = date;
+    //     workout.workoutLocation = Location;
+    //     workout.workoutUrl = Url;
+    //     workout.workoutTime = Time;
     //     createWorkout(workout);
     // }
 
@@ -116,13 +112,13 @@
                     <div class="control">
                     
                     <div class="control">
-                                 <input class="input is-primary" placeholder="https://images.google.com/images/1111.png" type="text" v-model="Url">
+                                 <input class="input is-primary" placeholder="https://imagesUrl.png" type="text" v-model="Url">
                              </div>
                     </div>
                 </div>
               <!-- line space -->
               <footer class="modal-card-foot">
-                        <button class="button is-success" @click="isActive=false">Save changes</button>
+                        <button class="button is-success" @click="isActive=false">Add Workout</button>
                         <button class="button" @click="isActive=false">Cancel</button>
                  </footer>
             </form>

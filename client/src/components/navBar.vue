@@ -29,7 +29,7 @@ import { RouterLink } from "vue-router";
             <div class="navbar-dropdown">
               <a class="navbar-item">
                 <router-link to="/allWorkouts" class="navbar-item">
-                  Friend's Workouts
+                  All Workouts
                 </router-link>
               </a>
               <a class="navbar-item">
