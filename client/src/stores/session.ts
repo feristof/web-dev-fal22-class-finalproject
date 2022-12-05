@@ -15,6 +15,7 @@ session.users.push({
     lastName: 'Patel',
     email: 'patelr25@newpaltz.edu',
     handle: 'Rishabh',
+    password: '123456',
 
 })
 
@@ -23,6 +24,7 @@ session.users.push({
     lastName: 'Plotkin',
     email: 'plotkinm@newpaltz.edu',
     handle: 'Moshe',
+    password: '123456',
  
 })
 
@@ -31,6 +33,7 @@ session.users.push({
     lastName: 'Doe',
     email: 'johndoe@gmail.com',
     handle: 'John',
+    password: '123456',
 
 })
 
@@ -39,6 +42,7 @@ session.users.push({
     lastName: 'Show',
     email: 'bigshow@gmail.com',
     handle: 'Big',
+    password: '123456',
 })
 
 export function setError(error: string | null) {
@@ -65,9 +69,9 @@ export async function api<T>(url: string, data: any = null, method?: string ){
 export const isLoading = computed(() => !! session.loading);
 
 
-export function login(firstName: string, lastName: string) {
+export function login(firstName: string, lastName: string, password: string) {
     for(let i = 0; i < session.users.length; i++) {
-        if(session.users[i].firstName === firstName && session.users[i].lastName === lastName) {
+        if(session.users[i].firstName === firstName && session.users[i].lastName === lastName && session.users[i].password === password) {
             session.user = session.users[i];
         }
     }
@@ -82,6 +86,7 @@ export class User {
     public lastName?: string;
     public email?: string;
     public handle?: string;
+    public password?: string;
 }
 
 export interface Message {

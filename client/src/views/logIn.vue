@@ -7,6 +7,7 @@ import { login } from "../stores/session";
 let userName = reactive({
   firstName: "",
   lastName: "",
+  password: "",
 });
 </script>
 
@@ -23,7 +24,7 @@ let userName = reactive({
                 <div class="control">
                   <input
                     type="text"
-                    placeholder="eg. Elon"
+                    placeholder="eg. Argon"
                     class="input is-primary"
                     required
                     v-model="userName.firstName"
@@ -35,10 +36,22 @@ let userName = reactive({
                 <div class="control">
                   <input
                     type="text"
-                    placeholder="eg. Musk"
+                    placeholder="eg. Brisk"
                     class="input is-primary"
                     required
                     v-model="userName.lastName"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label for="" class="label">Password</label>
+                <div class="control">
+                  <input
+                    class="input is-primary"
+                    type="password"
+                    required
+                    v-model="userName.password"
+                    placeholder="eg. ********"
                   />
                 </div>
               </div>
@@ -48,7 +61,7 @@ let userName = reactive({
                 <router-link
                   to="/"
                   class="button is-link"
-                  @click="login(userName.firstName, userName.lastName)"
+                  @click="login(userName.firstName, userName.lastName, userName.password)"
                   >Log in</router-link
                 >
               </div>

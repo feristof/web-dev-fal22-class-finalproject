@@ -63,14 +63,38 @@ import { RouterLink } from "vue-router";
             <div>{{ session.user?.email }}</div>
           </div>
         </div>
+
+        <div class="field">
+          <label class="label">Password: </label>
+          <div class="control">
+            <div> ******** </div>
+          </div>
       </div>
     </div>
-    <footer class="card-footer">
-      <a href="#" class="card-footer-item">Eat</a>
-      <a href="#" class="card-footer-item">Sleep</a>
-      <a href="#" class="card-footer-item">Workout</a>
+
+
+    <footer class="card-footer">  
+      <a href="#" class="card-footer-item">
+        <div class="control">
+          <div>
+            <RouterLink to="/myWorkouts">My Workouts</RouterLink>
+          </div>
+        </div></a>
+        <a href="#" class="card-footer-item">
+        <div class="control">
+          <div>
+            <RouterLink to="/allWorkouts">Friends Workout</RouterLink>
+          </div>
+        </div></a>
+        <a href="#" class="card-footer-item">
+        <div class="control">
+          <div>
+            <RouterLink to="/allWorkouts"> <a href="mailto:patelr25@newpaltz.edu"> Help</a> </RouterLink>
+          </div>
+        </div></a>
       <a href="#" class="card-footer-item">Repeat</a>
     </footer>
+  </div>
   </div>
 </template>
 

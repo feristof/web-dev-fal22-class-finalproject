@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 import session, { login, logout } from "../stores/session";
+import { getWorkouts, type Workout } from "../stores/workouts";
 import { RouterLink } from "vue-router";
 let isActive = ref(false);
 let ttl = "";
@@ -9,6 +10,9 @@ let Location = "";
 let Url = "";
 let Time = "";
 let Type = "";
+const workouts = reactive([] as Workout[]);
+    getWorkouts().then( x=> workouts.push(...x));
+
 </script>
 
 <template>
@@ -40,6 +44,32 @@ let Type = "";
       </footer>
     </div>
   </div>
+
+  <div v-for="workout in workouts">
+    <div v-if = "workout.firstName == session.user?.firstName">
+                 <br><br>
+                 <div class="media">
+                     <div class="media-content">
+                         <div class="content">
+                             <p>
+                                 <strong>Name: </strong>{{ workout.firstName }} {{ workout.lastName }} &nbsp&nbsp<strong>Handle:</strong> {{ workout.handle }} &nbsp&nbsp <strong>Date:</strong> {{ workout.workoutDate }}<br> <strong>Location: </strong>{{ workout.workoutLocation }}
+                                 <br>
+                                 <u><Strong>Title: </Strong>{{ workout.title }} </u>
+                                 <br><br>
+                                 <div class = "workout-image">
+                                     <img :src="workout.pictureUrl">
+                                 </div>
+                             </p>
+                         </div>
+                     </div>
+                     <div class="media-right">
+                        <button class="button is-danger is-outlined" @click="">Delete</button>&nbsp
+                        <button class="button is-black is-outlined">Share</button>
+                     </div>
+                 </div>
+                 <hr class="dotted">
+         </div>
+      </div>
 </template>
 
 <style scoped>

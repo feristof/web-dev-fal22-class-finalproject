@@ -2,11 +2,26 @@
      import { ref, reactive, computed } from 'vue';
      import session, { logout, login } from "../stores/session";
      import { RouterLink } from "vue-router";
-     import { getWorkouts, type Workout } from "../stores/workouts";
+     import { getWorkouts, type Workout, deleteWorkout, createWorkout } from "../stores/workouts";
      let ttl = '';let date = '';let Location = '';let Url = '';let Time = '';let Type = '';
     const workouts = reactive([] as Workout[]);
     getWorkouts().then( x=> workouts.push(...x));
     const isActive = ref(false);
+
+    // const workout = reactive({ } as Workout);
+    // workout.id = 2;
+    // workout.firstName = 'test';
+    // workout.lastName = 'test';
+    // workout.handle = 'test';
+    
+    // workout.workoutLocation = 'test';
+    // workout.title = 'ttl';
+
+    // function add(){
+    //     workout.workoutDate = date;
+    //     createWorkout(workout);
+    // }
+
 </script>
 
 
@@ -45,58 +60,75 @@
     </div>
 </div>
      <div class="column" v-else>
+        <div class="workoutAdd">
          <div class="button is-info is-fullwidth" @click="isActive=true">Add Workout</div>
          <div class="modal" :class="{ 'is-active': isActive }">
-             <div class="modal-background "></div>
-             <div class="modal">
-                 <header class="modal-card-head">
-                     <p class="modal">Add Workout</p>
-                     <button class="delete" aria-label="close" @click="isActive=false"></button>
-                 </header>
-                 <section class="modal-card-body">
-                     <div class="field">
-                         <label class="label">Title</label>
-                         <div class="control">
-                             <input class="input" type="text" v-model="ttl">
+          <div class="column is-8-tablet is-8-desktop is-8-widescreen">
+            <form class="box">
+              <div class="field">
+                <label class="label">Title</label>
+                        
+                <div class="control">
+                  
+                  <div class="control">
+                             <input class="input is-primary" placeholder="Skydiving" type="text" v-model="ttl">
                          </div>
-                     </div>
-                     <div class="field">
-                         <label class="label">Date (MM-DD-YYY)</label>
-                         <div class="control">
-                             <input class="input" type="text" v-model="date">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Date</label>
+                        
+                <div class="control">
+                  
+                  <div class="control">
+                             <input class="input is-primary" placeholder="DD/MM/YYYY" type="text" v-model="date">
                          </div>
-                     </div>
-                     <div class="field">
-                         <label class="label">Time Spent (Minutes)</label>
-                         <div class="control">
-                             <input class="input" type="text" v-model="Time">
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Duration</label>
+                        
+                <div class="control">
+                  
+                  <div class="control">
+                             <input class="input is-primary" placeholder="180 Minutes" type="text" v-model="Time">
                          </div>
-                     </div>
-                     <div class="field">
-                         <label class="label">Location (Place,State)</label>
-                         <div class="control">
-                             <input class="input" type="text" v-model="Location">
-                         </div>
-                     </div>
-                     <div class="field">
-                         <label class="label">Upload Picture Address/Url</label>
-                         <div class="control">
-                             <input class="input" type="text" v-model="Url">
-                         </div>
-                     </div>
-                     <div class="field">
-                         <label class="label">Workout Type</label>
-                         <div class="control">
-                             <input class="input" type="text" v-model="Type">
-                         </div>
-                     </div>
-                 </section>
-                 <footer class="modal-card-foot">
+                </div>
+              </div>
+              
+              
+                <div class="field">
+                    <label class="label">Location</label>
+                            
+                    <div class="control">
+                    
+                    <div class="control">
+                                 <input class="input is-primary" placeholder="New Paltz, NY" type="text" v-model="Location">
+                             </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Picture URL</label>
+                            
+                    <div class="control">
+                    
+                    <div class="control">
+                                 <input class="input is-primary" placeholder="https://images.google.com/images/1111.png" type="text" v-model="Url">
+                             </div>
+                    </div>
+                </div>
+              <!-- line space -->
+              <footer class="modal-card-foot">
                         <button class="button is-success" @click="isActive=false">Save changes</button>
                         <button class="button" @click="isActive=false">Cancel</button>
                  </footer>
-             </div>
+            </form>
+          </div>
          </div>
+        </div>
          <div v-for="workout in workouts">
                  <br><br>
                  <div class="media">
@@ -114,7 +146,7 @@
                          </div>
                      </div>
                      <div class="media-right">
-                        <button class="button is-danger is-outlined" @click="">Delete</button>&nbsp
+                        <button class="button is-danger is-outlined" @click="deleteWorkout(workout.id)">Delete</button>&nbsp
                         <button class="button is-black is-outlined">Share</button>
 
                      </div>

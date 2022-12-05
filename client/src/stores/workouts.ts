@@ -11,6 +11,24 @@ export function getWorkout(workout: Workout) {
   return fetchWorkout<Workout>(`workouts/${workout.id}`);
 }
 
+// DELETE method for workouts
+export function deleteWorkout(id: number) {
+  return fetchWorkout<Workout>(`workouts/${id}`, null, "DELETE");
+}
+// export function deleteWorkout(workout: Workout) {
+//   return fetchWorkout<Workout>(`workouts/${workout.id}`, {
+//     method: "DELETE",
+//   });
+// }
+
+export function createWorkout(workout: Workout) {
+  return fetchWorkout<Workout>("workouts", workout, "POST");
+}
+// export function createWorkout(id: number) {
+//   return fetchWorkout<Workout>(`workouts/${id}`, null, "POST");
+// }
+
+
 export interface ListEnvelope<T> {
   workouts: T[];
   total: number;

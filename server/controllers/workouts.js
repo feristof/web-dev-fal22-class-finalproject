@@ -1,5 +1,6 @@
 const express = require('express');
 const workouts = require('../models/workouts');
+
 const app = express.Router();
 
 app
@@ -20,7 +21,20 @@ app
                 }
             })
             .catch(next);
-    });
+    })
+
+.delete ('/:id', (req, res, next) => {
+    workouts.deleteWorkout(+req.params.id)
+        .then(x => res.status(200).send(x))
+        .catch(next);
+})
+
+//add workout, method:POST
+.post('/', (req, res, next) => {
+    workouts.addWorkout(req.body)
+        .then(x => res.status(200).send(x))
+        .catch(next);
+})
 
 
 module.exports = app;

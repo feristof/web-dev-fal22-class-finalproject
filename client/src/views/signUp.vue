@@ -6,6 +6,9 @@ let fName = "";
 let lName = "";
 let username = "";
 let userEmail = "";
+let userPassword = "";
+let county= "";
+
 </script>
 
 <template>
@@ -68,6 +71,18 @@ let userEmail = "";
                 <p class="control">
                   <a class="button is-static"> .com </a>
                 </p>
+              </div>
+              <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                  <input
+                    class="input is-primary"
+                    type="password"
+                    required
+                    v-model="userPassword"
+                    placeholder="eg. 123456"
+                  />
+                </div>
               </div>
 
               <label class="label">County, NY</label>
