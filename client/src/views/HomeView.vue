@@ -11,8 +11,6 @@ console.log(newTime.toLocaleString());
   <!-- <p id="royalty-text">This image is royalty free</p> -->
   <h1>Welcome to MY FITNESS APP</h1>
   <h2>{{ newTime }}</h2>
-
-  <h1>Try new workout: to do</h1>
 </template>
 
 <style scoped>

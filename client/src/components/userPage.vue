@@ -89,10 +89,9 @@ import { RouterLink } from "vue-router";
         <a href="#" class="card-footer-item">
         <div class="control">
           <div>
-            <RouterLink to="/allWorkouts"> <a href="mailto:patelr25@newpaltz.edu"> Help</a> </RouterLink>
+            <a href="mailto:patelr25@newpaltz.edu"> Help</a>
           </div>
         </div></a>
-      <a href="#" class="card-footer-item">Repeat</a>
     </footer>
   </div>
   </div>

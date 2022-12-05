@@ -125,6 +125,8 @@
           </div>
          </div>
         </div>
+        <br>
+        <div class="button is-fullwidth is-outlined"><b>Please go back to another page and come back when you delete the workout</b>(to see if workout is deleted from database)</div>
          <div v-for="workout in workouts">
                  <br><br>
                  <div class="media">
