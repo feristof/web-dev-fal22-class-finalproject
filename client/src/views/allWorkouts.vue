@@ -147,7 +147,7 @@
                      </div>
                      <div class="media-right">
                         <button class="button is-danger is-outlined" @click="deleteWorkout(workout.id)">Delete</button>&nbsp
-                        <button class="button is-black is-outlined">Share</button>
+                        <button class="button is-black is-outlined">Edit</button>
 
                      </div>
                  </div>

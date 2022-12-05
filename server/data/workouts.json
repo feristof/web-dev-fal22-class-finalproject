@@ -1,7 +1,7 @@
 {
   "workout": [
     {
-        "id": 1,
+      "id": 1,
       "firstName": "Rishabh",
       "lastName": "Patel",
       "handle": "Rishabh",
@@ -12,8 +12,48 @@
       "pictureUrl": "https://images.immediate.co.uk/production/volatile/sites/34/2022/03/GettyImages-975116404-fc1ed5e.jpg?quality=90&resize=620%2C413",
       "workoutType": "Swimming"
     },
+
     {
-        "id": 2,
+      "id": 1,
+      "firstName": "Rishabh",
+      "lastName": "Patel",
+      "handle": "Rishabh",
+      "title": "Playing basketball",
+      "workoutDate": "8-12-2022",
+      "workoutTime": "130 minutes",
+      "workoutLocation": "Newport, NY",
+      "pictureUrl": "https://goredbirds.com/images/2022/8/8/bball.jpg",
+      "workoutType": "Playing"
+    },
+
+    {
+      "id": 1,
+      "firstName": "Rishabh",
+      "lastName": "Patel",
+      "handle": "Rishabh",
+      "title": "Ice skating",
+      "workoutDate": "12-8-2022",
+      "workoutTime": "148 minutes",
+      "workoutLocation": "Monroe, NY",
+      "pictureUrl": "https://www.onlyinyourstate.com/wp-content/uploads/2020/12/North-Carolina-Whitewater-Center-7.jpg",
+      "workoutType": "Playing"
+    },
+
+    {
+      "id": 1,
+      "firstName": "Rishabh",
+      "lastName": "Patel",
+      "handle": "Rishabh",
+      "title": "Playing Ice hockey",
+      "workoutDate": "12-4-2021",
+      "workoutTime": "128 minutes",
+      "workoutLocation": "New Island, NY",
+      "pictureUrl": "https://www.liveabout.com/thmb/9Yips0mmG1VAF0-gtGDIcIDV6i4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-849841322-9921727d388148d1a8c1dc9146a1aa9f.jpg",
+      "workoutType": "Playing"
+    },
+
+    {
+      "id": 2,
       "firstName": "Moshe",
       "lastName": "Plotkin",
       "handle": "Moshe",
@@ -26,7 +66,7 @@
     },
 
     {
-        "id": 3,
+      "id": 3,
       "firstName": "John",
       "lastName": "Doe",
       "handle": "John",
@@ -39,7 +79,7 @@
     },
 
     {
-        "id": 4,
+      "id": 4,
       "firstName": "Big",
       "lastName": "Show",
       "handle": "Big",
