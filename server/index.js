@@ -33,6 +33,7 @@ app
 
 .use('/api/v1/workouts', workoutsController)
 
+
 app.get('*', (req, res) => {
     
     res.sendFile('index.html', {root: './client/dist'});

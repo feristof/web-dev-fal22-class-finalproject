@@ -1,22 +1,27 @@
 <script setup lang="ts">
-     import { ref, reactive, computed } from 'vue';
-     import session, { logout, login } from "../stores/session";
+     import { ref, reactive } from 'vue';
+     import session from "../stores/session";
      import { RouterLink } from "vue-router";
      import { getWorkouts, type Workout, deleteWorkout, createWorkout } from "../stores/workouts";
      let ttl = '';let date = '';let Location = '';let Url = '';let Time = '';
     const workouts = reactive([] as Workout[]);
     getWorkouts().then( x=> workouts.push(...x));
-    const isActive = ref(false);
+    let isActive = ref(false);
 
-    // const workout = reactive({ } as Workout);
-    //add workout to the database
-    // function add(){
-    //     workout.workoutDate = date;
-    //     workout.workoutLocation = Location;
-    //     workout.workoutUrl = Url;
-    //     workout.workoutTime = Time;
-    //     createWorkout(workout);
-    // }
+    const workout = reactive({ } as Workout);
+    // add workout to the database
+    async function add(){
+        await getWorkouts().then( x=> workout.id = x[x.length - 1].id + 1);
+        workout.firstName = session.user?.firstName as string;
+        workout.lastName = session.user?.lastName as string;
+        workout.title = ttl;
+        workout.workoutDate = date;
+        workout.workoutLocation = Location;
+        workout.pictureUrl= Url;
+        workout.workoutTime = Time;
+        workout.handle = session.user?.handle as string;
+        createWorkout(workout);
+    }
 
 </script>
 
@@ -116,17 +121,17 @@
                              </div>
                     </div>
                 </div>
-              <!-- line space -->
-              <footer class="modal-card-foot">
-                        <button class="button is-success" @click="isActive=false">Add Workout</button>
-                        <button class="button" @click="isActive=false">Cancel</button>
-                 </footer>
+                <div class="clos-workout">
+                    <a class="button is-primary" @click="add();isActive=false">Add Workout</a>
+                    <a @click="isActive=false"> Cancel </a>
+                </div>
+                 
             </form>
           </div>
          </div>
         </div>
         <br>
-        <div class="button is-fullwidth is-outlined"><b>Please go back to another page and come back when you delete the workout</b>(to see if workout is deleted from database)</div>
+        <div class="button is-fullwidth is-outlined"><b>Note: Please go back to another page and come back to see any changes in workout</b>(add/get/delete from database)</div>
          <div v-for="workout in workouts">
                  <br><br>
                  <div class="media">

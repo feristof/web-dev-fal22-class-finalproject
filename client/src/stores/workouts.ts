@@ -1,6 +1,6 @@
 // fetch workout from the server using the fetchWorkout function
 import fetchWorkout from "../services/fetchWorkout";
-import session from "./session";
+
 
 export function getWorkouts() {
   return fetchWorkout<Workout[]>("workouts");
@@ -45,5 +45,4 @@ export interface Workout {
   workoutTime: string;
   workoutLocation: string;
   pictureUrl: string;
-  workoutType: string;
 }

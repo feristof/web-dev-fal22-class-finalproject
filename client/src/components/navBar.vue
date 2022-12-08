@@ -38,12 +38,18 @@ import { RouterLink } from "vue-router";
                 </router-link>
               </a>
             </div>
+          </div>
             <a class="navbar-item">
               <router-link to="/userPage" class="navbar-item">
                 My Profile
               </router-link>
             </a>
-          </div>
+            <a class="navbar-item">
+              <router-link to="/users" class="navbar-item">
+                User
+              </router-link>
+            </a>
+          
         </div>
       </div>
 

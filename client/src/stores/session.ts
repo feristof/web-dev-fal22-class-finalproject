@@ -11,38 +11,46 @@ const session = reactive ({
 });
 
 session.users.push({
+    id: 1,
     firstName: 'Rishabh',
     lastName: 'Patel',
     email: 'patelr25@newpaltz.edu',
     handle: 'Rishabh',
     password: '123456',
+    admin: true
 
 })
 
 session.users.push({
+    id: 2,
     firstName: 'Moshe',
     lastName: 'Plotkin',
     email: 'plotkinm@newpaltz.edu',
     handle: 'Moshe',
     password: '123456',
+    admin: true
  
 })
 
 session.users.push({
+    id: 3,
     firstName: 'John',
     lastName: 'Doe',
     email: 'johndoe@gmail.com',
     handle: 'John',
     password: '123456',
+    admin: false
 
 })
 
 session.users.push({
+    id: 4,
     firstName: 'Big',
     lastName: 'Show',
     email: 'bigshow@gmail.com',
     handle: 'Big',
     password: '123456',
+    admin: false
 })
 
 export function setError(error: string | null) {
@@ -82,11 +90,13 @@ export function logout(){
 }
 
 export class User {
+    public id?: number;
     public firstName?: string;
     public lastName?: string;
     public email?: string;
     public handle?: string;
     public password?: string;
+    public admin?: boolean;
 }
 
 export interface Message {
