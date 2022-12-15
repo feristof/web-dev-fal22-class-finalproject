@@ -22,6 +22,11 @@ async function getWorkout(id) {
     return data;
 }
 
+async function searchWorkout(search) {
+    const db = await collection();
+    const data = await db.find({ title: { $regex: q, $options: 'i' } }).toArray()
+    return data;
+}
 
 //DELETE
 async function deleteWorkout(id) {
@@ -42,5 +47,6 @@ module.exports = {
     getWorkouts,
     getWorkout,
     deleteWorkout,
-    addWorkout
+    addWorkout,
+    searchWorkout
 };

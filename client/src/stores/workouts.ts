@@ -11,6 +11,12 @@ export function getWorkout(workout: Workout) {
   return fetchWorkout<Workout>(`workouts/${workout.id}`);
 }
 
+// search title of workout from id
+export function searchWorkout(workout: Workout) {
+  return fetchWorkout<Workout>(`workouts/${workout.title}`);
+}
+
+
 // DELETE method for workouts
 export function deleteWorkout(id: number) {
   return fetchWorkout<Workout>(`workouts/${id}`, null, "DELETE");
@@ -27,6 +33,8 @@ export function createWorkout(workout: Workout) {
 // export function createWorkout(id: number) {
 //   return fetchWorkout<Workout>(`workouts/${id}`, null, "POST");
 // }
+
+
 
 
 export interface ListEnvelope<T> {
@@ -46,3 +54,7 @@ export interface Workout {
   workoutLocation: string;
   pictureUrl: string;
 }
+
+
+
+

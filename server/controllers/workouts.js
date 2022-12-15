@@ -36,5 +36,12 @@ app
         .catch(next);
 })
 
+//search workout, method:GET
+.get('/search/:q', (req, res, next) => {
+    workouts.searchWorkout(req.params.q)
+        .then(x => res.status(200).send(x))
+        .catch(next);
+})
+
 
 module.exports = app;

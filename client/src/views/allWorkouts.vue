@@ -2,7 +2,11 @@
      import { ref, reactive } from 'vue';
      import session from "../stores/session";
      import { RouterLink } from "vue-router";
-     import { getWorkouts, type Workout, deleteWorkout, createWorkout } from "../stores/workouts";
+     import { getWorkouts, type Workout, deleteWorkout, createWorkout, searchWorkout } from "../stores/workouts";
+
+    //  importing vue select
+    // import vSelect from "vue-select";
+
      let ttl = '';let date = '';let Location = '';let Url = '';let Time = '';
     const workouts = reactive([] as Workout[]);
     getWorkouts().then( x=> workouts.push(...x));
@@ -22,6 +26,8 @@
         workout.handle = session.user?.handle as string;
         createWorkout(workout);
     }
+    
+
 
 </script>
 
@@ -130,6 +136,20 @@
           </div>
          </div>
         </div>
+        <br>
+        <div class="search">
+            <input type="text" placeholder=" Search for title ">
+        </div>
+<!-- making a v-select component to search for workouts from title -->
+        <!-- <div class="search">
+            <v-select
+            :options="workouts"
+            label="title"
+            v-model="search"
+            @input="searchWorkout(search)"
+            >
+            </v-select>
+        </div> -->
         <br>
         <div class="button is-fullwidth is-outlined"><b>Note: Please go back to another page and come back to see any changes in workout</b>(add/get/delete from database)</div>
          <div v-for="workout in workouts">
