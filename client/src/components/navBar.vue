@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import loginBadge from "../components/loginBadge.vue";
 import { RouterLink } from "vue-router";
+let isActive = ref(false);
 </script>
 
 <template>
@@ -10,13 +12,13 @@ import { RouterLink } from "vue-router";
         <div class="logo"><img src="../assets/logo.png" /></div>
       </router-link>
 
-      <a role="button" class="navbar-burger" aria-label="menu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-
-      <div id="navbarBasicExample" class="navbar-menu">
+      <a :class="{ 'is-active': isActive }" @click="isActive = !isActive" role="button" class="navbar-burger">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': isActive }">
         <div class="navbar-start">
           <a class="navbar-item">
             <router-link to="/newtoApp" class="navbar-item">
@@ -54,7 +56,7 @@ import { RouterLink } from "vue-router";
       </div>
 
       <loginBadge />
-    </div>
+    
   </nav>
 </template>
 
