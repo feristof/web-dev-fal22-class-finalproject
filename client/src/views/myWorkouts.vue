@@ -73,20 +73,189 @@ const workouts = reactive([] as Workout[]);
 </template>
 
 <style scoped>
-.card {
-  margin-top: 8rem;
-}
-.subtitle,
-.title {
-  font-size: 1.5rem;
-  font-weight: 300;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
-  text-align: center;
+hr.dotted{
+    border-top:1px dotted green;
 }
 
-.title {
+img:hover{
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+.card{
+    margin-top: 8rem;
+}
+.subtitle, .title{
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.title{
   font-weight: 600;
 }
+.workout-image img{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 24px black;
+    display: block;
+    margin-left: 4rem;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 768px){
+    .workout-image img{
+        width: 48em;
+        height: 48%;
+        box-shadow: 0 0 24px black;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .workoutAdd{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.media{
+    margin-left: 4rem;
+    margin-right: 4rem;
+    background-color: lightgoldenrodyellow;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 24px black;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* making it responsive */
+@media screen and (max-width: 768px){
+    .media{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .search{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .button{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .close-workout{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .field{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .control{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .label{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .input{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-background{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-content{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card-head{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card-body{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card-foot{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-close{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card-title{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+
 </style>

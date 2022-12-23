@@ -119,4 +119,7 @@ import { RouterLink } from "vue-router";
 .title {
   font-weight: 600;
 }
+
+/* responsive */
+
 </style>

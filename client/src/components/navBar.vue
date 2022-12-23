@@ -3,6 +3,8 @@ import { ref } from 'vue';
 import loginBadge from "../components/loginBadge.vue";
 import { RouterLink } from "vue-router";
 let isActive = ref(false);
+
+
 </script>
 
 <template>
@@ -12,7 +14,7 @@ let isActive = ref(false);
         <div class="logo"><img src="../assets/logo.png" /></div>
       </router-link>
 
-      <a :class="{ 'is-active': isActive }" @click="isActive = !isActive" role="button" class="navbar-burger">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" :class="{ 'is-active': isActive }" @click="isActive = !isActive">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>

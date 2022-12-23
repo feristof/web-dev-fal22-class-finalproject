@@ -49,7 +49,7 @@ function deleteUser(id: number) {
 <table class="table is-striped">
                  <thead>
                      <tr>
-                            <th>ID</th>
+                         <th>ID</th>
                          <th>First Name</th>
                          <th>Last Name</th>
                          <th>Email</th>
@@ -61,7 +61,7 @@ function deleteUser(id: number) {
                  </thead>
                  <tbody>
                      <tr v-for="user in session.users">
-                        <td> {{user.id}}</td>
+                         <td> {{user.id}}</td>
                          <td>{{ user.firstName }}</td>
                          <td>{{ user.lastName }}</td>
                          <td>{{ user.email }}</td>
@@ -71,21 +71,61 @@ function deleteUser(id: number) {
                      </tr>
                  </tbody>
              </table>
-    </div>
+            </div>
 </template>
 
 
 
 <style scoped>
-.user-table {
-    margin: 0 auto;
-    margin-top: 8em;
-    width: 50%;
-    padding: 20px;
-    border: 2px solid orange;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    background: #fff;
+.table{
+    margin-top: 8rem;
+    /* design */
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
+}
+
+/* responsive table */
+@media screen and (max-width: 768px) {
+    .table {
+        display: block;
+        position: relative;
+    }
+    .table > *, .table tr, .table td, .table th {
+        display: block;
+    }
+    .table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .table tr {
+        border: 1px solid #ccc;
+    }
+    .table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    .table td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+    .table td:nth-of-type(1):before { content: "ID"; }
+    .table td:nth-of-type(2):before { content: "First Name"; }
+    .table td:nth-of-type(3):before { content: "Last Name"; }
+    .table td:nth-of-type(4):before { content: "Email"; }
+    .table td:nth-of-type(5):before { content: "Handle"; }
+    .table td:nth-of-type(6):before { content: "Admin"; }
+    .table td:nth-of-type(7):before { content: "Delete"; }
 }
 .card{
     margin-top: 8rem;

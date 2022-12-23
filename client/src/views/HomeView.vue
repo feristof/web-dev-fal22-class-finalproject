@@ -1,7 +1,13 @@
 <script setup lang="ts">
 // display current date and time
-const newTime = new Date();
-console.log(newTime.toLocaleString());
+import { ref } from 'vue';
+import { RouterLink } from "vue-router";
+let isActive = ref(false);
+let newTime = ref(new Date().toLocaleString());
+setInterval(() => {
+  newTime.value = new Date().toLocaleString();
+}, 1000);
+
 </script>
 
 <template>
@@ -11,6 +17,7 @@ console.log(newTime.toLocaleString());
   <!-- <p id="royalty-text">This image is royalty free</p> -->
   <h1>Welcome to MY FITNESS APP</h1>
   <h2>{{ newTime }}</h2>
+<br>
 </template>
 
 <style scoped>
@@ -22,9 +29,15 @@ h1 {
 }
 h2 {
   text-align: center;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 400;
 }
+
+/* designing todo list */
+.container {
+  margin-top: 50px;
+}
+
 
 /* #royalty-text{
   color: white;

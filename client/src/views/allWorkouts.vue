@@ -127,7 +127,7 @@
                              </div>
                     </div>
                 </div>
-                <div class="clos-workout">
+                <div class="close-workout">
                     <a class="button is-primary" @click="add();isActive=false">Add Workout</a>
                     <a @click="isActive=false"> Cancel </a>
                 </div>
@@ -137,9 +137,9 @@
          </div>
         </div>
         <br>
-        <div class="search">
+        <!-- <div class="search">
             <input type="text" placeholder=" Search for title ">
-        </div>
+        </div> -->
 <!-- making a v-select component to search for workouts from title -->
         <!-- <div class="search">
             <v-select
@@ -151,7 +151,6 @@
             </v-select>
         </div> -->
         <br>
-        <div class="button is-fullwidth is-outlined"><b>Note: Please go back to another page and come back to see any changes in workout</b>(add/get/delete from database)</div>
          <div v-for="workout in workouts">
                  <br><br>
                  <div class="media">
@@ -214,6 +213,159 @@ img:hover{
     margin-left: 4rem;
     margin-right: auto;
 }
+
+@media screen and (max-width: 768px){
+    .workout-image img{
+        width: 48em;
+        height: 48%;
+        box-shadow: 0 0 24px black;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .workoutAdd{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.media{
+    margin-left: 4rem;
+    margin-right: 4rem;
+    background-color: lightgoldenrodyellow;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 24px black;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* making it responsive */
+@media screen and (max-width: 768px){
+    .media{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .search{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .button{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .close-workout{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .field{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .control{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .label{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .input{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-background{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-content{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card-head{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card-body{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card-foot{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-close{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .modal-card-title{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
 </style>
 
 
