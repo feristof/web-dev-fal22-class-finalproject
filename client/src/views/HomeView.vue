@@ -15,7 +15,7 @@ setInterval(() => {
     
   </main>
   <!-- <p id="royalty-text">This image is royalty free</p> -->
-  <h1>Welcome to MY FITNESS APP</h1>
+  <h1>Welcome to MY FITNESS APP | This is portfolio project of <ul>Rishabh Patel</ul> which utilizes a combination languages and technologies like Javascript (Vue.js), Express (NodeJS), CSS (BULMA), HTML, MongoDB, and JSON files to create a comprehensive solution | This project includes client-side, server-side, and database components for efficient data management.</h1>
   <h2>{{ newTime }}</h2>
 <br>
 </template>
