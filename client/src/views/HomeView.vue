@@ -16,7 +16,7 @@ setInterval(() => {
   </main>
   <!-- <p id="royalty-text">This image is royalty free</p> -->
   <h1>Welcome to FitFusion</h1>
-  <h2>This is portfolio project of <ul><b>Rishabh Patel</b></ul> which utilizes a combination languages and technologies like Javascript (Vue.js), Express (NodeJS), CSS (BULMA), HTML, MongoDB, and JSON files to create a comprehensive solution | This project includes client-side, server-side, and database components for efficient data management | Please visit my application and enjoy browsing :)</h2>
+  <h2>This is portfolio project of <ul><b>Rishabh Patel</b></ul> which utilizes a combination languages and technologies like Javascript (React, Vue), Express (NodeJS), CSS (BULMA), HTML, MongoDB, and JSON files to create a comprehensive solution | This project includes client-side, server-side, and database components for efficient data management | Please visit my application and enjoy browsing :)</h2>
   <h3>{{ newTime }}</h3>
 <br>
 </template>
